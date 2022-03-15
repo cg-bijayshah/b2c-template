@@ -1008,7 +1008,7 @@ button#next{
 
     .unified_container .row .panel-default #api .localAccount .entry .entry-item input {
       outline: 0;
-      background-color: #fff !important;
+      background-color: #fff;
       background-image: none !important;
       border-radius: .5rem !important;
       color: #555;
@@ -1022,7 +1022,10 @@ button#next{
       -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s !important;
       -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s !important
     }
-
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item input:focus {
+      border: 2px solid #004071;
+      background-color: #dde4f5;
+    }
     .unified_container .row .panel-default #api .localAccount .entry .entry-item #password {
       margin-bottom: 20px
     }
