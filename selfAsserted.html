@@ -1060,19 +1060,42 @@
 </head>
 
 <body>
-    <div id="background_branding_container" data-tenant-branding-background-color="true">
-        <img data-tenant-branding-background="true"
-            src="https://images.ctfassets.net/n58cc9djl3c5/4EQY9gMdVMQSJwoCHP77e/33d01670d310dcc26598100c79642674/homeHero.jpeg?fm=jpg&fl=progressive&w=2880"
-            alt="Illustration" />
-        <div class="row">
-        </div>
+    <div class="fixed-top js-fixed-top navbar-wrapper">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="https://brinkshome.com" target="_self">
+                <img 
+                src="https://theme.zdassets.com/theme_assets/99582/71fddfa564878537181b1eaede2f20ce11d65a33.svg"
+                alt="Brinks Home Brand" />
+              </a>
+            </div>
+    
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="https://dev.mymoni.com/sign-in" target="_self">Sign In</a></li>
+                <li><a href="https://dev.mymoni.com/my-account/setup-account" target="_self">Register</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
     </div>
-    <div class="container  self_asserted_container " role="presentation">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div id="api" role="main">
+    <div class="container-fluid bg-img">
+        <div class="container  self_asserted_container " role="presentation">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div id="api" role="main">
+                            </div>
                         </div>
                     </div>
                 </div>
