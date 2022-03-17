@@ -1072,7 +1072,19 @@
             background-color: #fff;
         }
     </style>
-
+    <script>
+        (function(){
+          var elm = document.getElementById('email_success')[0],
+            old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
+            interval = setInterval(function(){
+              var style = elm.currentStyle || window.getComputedStyle(elm, false);
+              if(old !== style.display){
+                clearInterval(interval);
+                console.log('changed');
+              }
+            },120);
+        })();
+    </script>
 </head>
 
 <body>
