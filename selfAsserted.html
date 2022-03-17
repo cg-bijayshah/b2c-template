@@ -1187,6 +1187,12 @@
             font-size: 16px;
         }
     </style>
+
+    <style>
+        div#attributeList ul li:nth-child(1){
+            display:none;
+        }
+    </style>
 </head>
 
 <body>
@@ -1242,10 +1248,10 @@
                 if(old !== style.display){
                 clearInterval(interval);
                 console.log('changed');
+                document.querySelectorAll("div#attributeList ul li").style.display="block";
                 }
             },120);
             })();
     </script>
 </body>
-
 </html>
