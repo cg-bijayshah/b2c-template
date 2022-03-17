@@ -1251,19 +1251,24 @@
         </div>
     </div>
     <script type="text/javascript">
-        (function(){
-            console.log("working?");
-            var elm = document.getElementById('email_success'),
+        (function () {
+        console.log("working?");
+        var elm = document.getElementById("email_success"),
             old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
-            interval = setInterval(function(){
-                var style = elm.currentStyle || window.getComputedStyle(elm, false);
-                if(old !== style.display){
+            interval = setInterval(function () {
+            var style = elm.currentStyle || window.getComputedStyle(elm, false);
+            if (old !== style.display) {
                 clearInterval(interval);
-                console.log('changed');
-                document.querySelectorAll("div#attributeList ul li").style.display="block";
-                }
-            },120);
-            })();
+                console.log("changed");
+                const container = document.querySelector("#attributeList");
+                const matches = container.querySelectorAll("li");
+
+                matches.forEach(function (item) {
+                item.style.display = "block";
+                });
+            }
+            }, 120);
+        })();
     </script>
 </body>
 </html>
