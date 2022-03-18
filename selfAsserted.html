@@ -623,10 +623,6 @@
             display: none
         }
 
-        #attributeVerification .buttons {
-            margin-top: 30px
-        }
-
         @media screen and (max-width:100%) {
             .row .panel-default .panel-body {
                 margin-top: 40px
@@ -779,7 +775,7 @@
         /* Following are generated styles via gulp. */
         /* inject: css */
         .self_asserted_container .row .panel-default {
-            padding: 30px;
+            padding: 20px 30px;
             margin: auto;
             height: 100%;
             background-color: #fff
@@ -1359,6 +1355,7 @@
                 
                 document.getElementById("continue").style.display = "block";
                 document.getElementById("email_label").style.display ='none';
+                document.getElementById("email").style.backgroundColor = '#e5f0f5'
                 
                 matches.forEach(function (item) {
                 item.style.display = "block";
