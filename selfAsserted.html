@@ -1358,9 +1358,9 @@
         **/
 
         (function(){
-                var password = document.querySelector('#password');
+                var password = document.querySelector('#newPassword');
                 
-                var helperText = {
+                var pwHelperText = {
                     charLength: document.querySelector('.pw-helper-text .length'),
                     lowercase: document.querySelector('.pw-helper-text .lowercase'),
                     uppercase: document.querySelector('.pw-helper-text .uppercase'),
@@ -1399,22 +1399,22 @@
                 // Listen for keyup action on password field
             password.addEventListener('keyup', function (){
                     // Check that password is a minimum of 8 characters
-                    patternTest( pattern.charLength(), helperText.charLength );
+                    patternTest( pattern.charLength(), pwHelperText.charLength );
                     
                     // Check that password contains a lowercase letter      
-                    patternTest( pattern.lowercase(), helperText.lowercase );
+                    patternTest( pattern.lowercase(), pwHelperText.lowercase );
                     
                     // Check that password contains an uppercase letter
-                    patternTest( pattern.uppercase(), helperText.uppercase );
+                    patternTest( pattern.uppercase(), pwHelperText.uppercase );
                     
                     // Check that password contains a number or special character
-                    patternTest( pattern.special(), helperText.special );
+                    patternTest( pattern.special(), pwHelperText.special );
                 
                 // Check that all requirements are fulfilled
-                if( hasClass(helperText.charLength, 'valid') &&
-                        hasClass(helperText.lowercase, 'valid') && 
-                            hasClass(helperText.uppercase, 'valid') && 
-                        hasClass(helperText.special, 'valid')
+                if( hasClass(pwHelperText.charLength, 'valid') &&
+                        hasClass(pwHelperText.lowercase, 'valid') && 
+                            hasClass(pwHelperText.uppercase, 'valid') && 
+                        hasClass(pwHelperText.special, 'valid')
                     ) {
                         addClass(password.parentElement, 'valid');
                 }
