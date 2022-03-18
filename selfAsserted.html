@@ -1359,6 +1359,8 @@
 
         (function(){
                 var password = document.querySelector('#newPassword');
+
+                var reenterPassword = document.querySelector('#reenterPassword');
                 
                 var pwHelperText = {
                     charLength: document.querySelector('.pw-helper-text .length'),
@@ -1396,6 +1398,15 @@
                     }   
                 };
                 
+                reenterPassword.addEventListener('keyup', function (){
+                    //check that passwords match
+                    console.log(password.value);
+                    if(password.value === reenterPassword.value){
+                        alert('passwords match')
+                    }
+                })
+
+
                 // Listen for keyup action on password field
             password.addEventListener('keyup', function (){
                     // Check that password is a minimum of 8 characters
