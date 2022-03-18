@@ -1306,14 +1306,26 @@
             }
             }, 120);
         })();
-        function join_ym()
-            {
-            var yy = document.getElementById('givenName').value;
-            var mm = document.getElementById('surname').value;
-            document.getElementById('displayName').value = yy+mm;
-            alert(document.getElementById('displayName').value);
+
+
+        (function () {
+        console.log("working?");
+        var elm = document.getElementById("email_success"),
+            old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
+            interval = setInterval(function () {
+            var style = elm.currentStyle || window.getComputedStyle(elm, false);
+            if (old !== style.display) {
+                clearInterval(interval);
+                console.log("changed");
+                
+                var yy = document.getElementById('givenName').value;
+                var mm = document.getElementById('surname').value;
+                document.getElementById('displayName').value = yy+mm;
+                alert(document.getElementById('displayName').value);
+
             }
-            </script>
-    </script>
+            }, 120);
+        })();
+        </script>
 </body>
 </html>
