@@ -1388,19 +1388,21 @@
 
                 var reenterPassword = document.querySelector('#reenterPassword');
                 
+                var pw = document.getElementById('#newPassword');
+                var rpw = document.getElementById('#reenterPassword');
 
-                password.addEventListener("focus", function(){
+                pw.addEventListener("focus", function(){
                     console.log('test');
                     document.getElementsByClassName('.pw-helper-panel').style.display = 'block';
                 });
-                password.addEventListener("focusout", function(){
+                pw.addEventListener("focusout", function(){
                     document.getElementsByClassName('.pw-helper-panel').style.display = 'none';
                 });
 
-                reenterPassword.addEventListener("focus", function(){
+                rpw.addEventListener("focus", function(){
                     document.getElementsByClassName('.pw-helper-panel').style.display = 'block';
                 });
-                reenterPassword.addEventListener("focusout", function(){
+                rpw.addEventListener("focusout", function(){
                     document.getElementsByClassName('.pw-helper-panel').style.display = 'none';
                 });
 
