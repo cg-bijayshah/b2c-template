@@ -1393,7 +1393,9 @@
 
                 pw.addEventListener("focus", function(){
                     console.log('test');
-                    document.getElementById('pw-helper-panel').style.display = 'block';
+                    var pwpanel = document.getElementById('pw-helper-panel');
+                    pwpanel.style.display = 'block';
+                    pwpanel.style.height = '200px';
                 });
                 pw.addEventListener("focusout", function(){
                     document.getElementById('pw-helper-panel').style.display = 'none';
