@@ -1244,7 +1244,7 @@
     </style>
     <style>
         ul.pw-helper-text {
-            display: block;
+            display: none;
             margin-top: 6px;
             font-size: 13px;
             line-height: 30px;
@@ -1264,6 +1264,7 @@
         }
 
         .pw-helper-panel{
+            display: none;
             position: absolute;
             bottom: 42px;
             left: 482px;
@@ -1384,12 +1385,26 @@
             }, 120);
         })();
         **/
-
         (function(){
                 var password = document.querySelector('#newPassword');
 
                 var reenterPassword = document.querySelector('#reenterPassword');
                 
+
+                password.addEventListener("focus", function(){
+                    document.getElementsByClassName('.pw-helper-panel').style.display = 'block';
+                });
+                password.addEventListener("focusout", function(){
+                    document.getElementsByClassName('.pw-helper-panel').style.display = 'none';
+                });
+
+                reenterPassword.addEventListener("focus", function(){
+                    document.getElementsByClassName('.pw-helper-panel').style.display = 'block';
+                });
+                reenterPassword.addEventListener("focusout", function(){
+                    document.getElementsByClassName('.pw-helper-panel').style.display = 'none';
+                });
+
                 var pwHelperText = {
                     charLength: document.querySelector('.pw-helper-text .length'),
                     lowercase: document.querySelector('.pw-helper-text .lowercase'),
