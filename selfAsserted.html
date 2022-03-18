@@ -1242,6 +1242,21 @@
             box-sizing: border-box;
         }
     </style>
+    <style>
+        ul.pw-helper-text {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 22px;
+        color: red;
+        }
+        ul.pw-helper-text li.valid {
+        color: blue;
+        }
+        form.valid input {
+        border: 2px solid blue;
+        }
+    </style>
 </head>
 
 <body onload="loaded();">
@@ -1281,6 +1296,12 @@
                         <div class="panel-body">
                             <div id="api" role="main">
                             </div>
+                            <ul class="pw-helper-text">
+                                <li class="length">Must be at least 8 characters long.</li>
+                                <li class="lowercase">Must contain a lowercase letter.</li>
+                                <li class="uppercase">Must contain an uppercase letter.</li>
+                                <li class="special">Must contain a number or special character.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -1288,15 +1309,9 @@
         </div>
     </div>
     <script type="text/javascript">
-        function loaded() {
-            console.log('page loaded!!!!!!');
-            document.getElementById('email').placeholder = 'you@example.com';
-         }
-
-        (function () {
+         (function () {
             
         console.log("working?");
-        document.getElementById('email').placeholder = 'you@example.com';
 
         var input = document.getElementById ("email");
         input.placeholder = "me@example.com";
@@ -1341,6 +1356,108 @@
             }, 120);
         })();
         **/
+
+        (function(){
+                var password = document.querySelector('#password');
+                
+                var helperText = {
+                    charLength: document.querySelector('.pw-helper-text .length'),
+                    lowercase: document.querySelector('.pw-helper-text .lowercase'),
+                    uppercase: document.querySelector('.pw-helper-text .uppercase'),
+                    special: document.querySelector('.pw-helper-text .special')
+                };
+                
+                var pattern = {
+                    charLength: function() {
+                        if( password.value.length >= 8 ) {
+                            return true;
+                        }
+                    },
+                    lowercase: function() {
+                        var regex = /^(?=.*[a-z]).+$/; // Lowercase character pattern
+
+                        if( regex.test(password.value) ) {
+                            return true;
+                        }
+                    },
+                    uppercase: function() {
+                        var regex = /^(?=.*[A-Z]).+$/; // Uppercase character pattern
+
+                        if( regex.test(password.value) ) {
+                            return true;
+                        }
+                    },
+                    special: function() {
+                        var regex = /^(?=.*[0-9_\W]).+$/; // Special character or number pattern
+
+                        if( regex.test(password.value) ) {
+                            return true;
+                        }
+                    }   
+                };
+                
+                // Listen for keyup action on password field
+            password.addEventListener('keyup', function (){
+                    // Check that password is a minimum of 8 characters
+                    patternTest( pattern.charLength(), helperText.charLength );
+                    
+                    // Check that password contains a lowercase letter      
+                    patternTest( pattern.lowercase(), helperText.lowercase );
+                    
+                    // Check that password contains an uppercase letter
+                    patternTest( pattern.uppercase(), helperText.uppercase );
+                    
+                    // Check that password contains a number or special character
+                    patternTest( pattern.special(), helperText.special );
+                
+                // Check that all requirements are fulfilled
+                if( hasClass(helperText.charLength, 'valid') &&
+                        hasClass(helperText.lowercase, 'valid') && 
+                            hasClass(helperText.uppercase, 'valid') && 
+                        hasClass(helperText.special, 'valid')
+                    ) {
+                        addClass(password.parentElement, 'valid');
+                }
+                else {
+                removeClass(password.parentElement, 'valid');
+                }
+                });
+                
+                function patternTest(pattern, response) {
+                    if(pattern) {
+                addClass(response, 'valid');
+                }
+                else {
+                removeClass(response, 'valid');
+                }
+                }
+                
+                function addClass(el, className) {
+                    if (el.classList) {
+                        el.classList.add(className);
+                    }
+                    else {
+                        el.className += ' ' + className;
+                    }
+                }
+                
+                function removeClass(el, className) {
+                    if (el.classList)
+                            el.classList.remove(className);
+                        else
+                            el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+                }
+                
+                function hasClass(el, className) {
+                    if (el.classList) {
+                        return el.classList.contains(className);    
+                    }
+                    else {
+                        new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className); 
+                    }
+                }
+                
+            })();
         </script>
 </body>
 </html>
