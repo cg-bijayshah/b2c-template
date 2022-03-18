@@ -1256,6 +1256,12 @@
         form.valid input {
         border: 2px solid blue;
         }
+
+        .icon {
+        padding-left: 25px;
+        background: url("_icon_check_blue.png") no-repeat right;
+        background-size: 25px;
+        }
     </style>
 </head>
 
@@ -1400,9 +1406,14 @@
                 
                 reenterPassword.addEventListener('keyup', function (){
                     //check that passwords match
-                    console.log(password.value);
+                   // console.log(password.value);
                     if(password.value === reenterPassword.value){
-                        alert('passwords match')
+                      //  alert('passwords match')
+                        password.classList.add('.icon');
+                        reenterPassword.classList.add('.icon');
+                    } else if(password.value != reenterPassword.value){
+                        password.classList.remove('.icon');
+                        reenterPassword.classList.remove('.icon'); 
                     }
                 })
 
