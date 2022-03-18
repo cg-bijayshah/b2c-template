@@ -1280,7 +1280,6 @@
             padding-bottom: 4px;
             }
         }
-
     </style>
 </head>
 
@@ -1391,6 +1390,7 @@
                 
 
                 password.addEventListener("focus", function(){
+                    console.log('test');
                     document.getElementsByClassName('.pw-helper-panel').style.display = 'block';
                 });
                 password.addEventListener("focusout", function(){
