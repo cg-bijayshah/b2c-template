@@ -424,7 +424,8 @@
 
         #attributeList ul li .attrEntry.validate input.invalid,
         #attributeList ul li .attrEntry.validate input:invalid {
-            border: 1px solid #b00
+            border: 1px solid #b00;
+            background-color: #BF4C4C;
         }
 
         #attributeList ul li .attrEntry .verify {
@@ -778,7 +779,7 @@
         /* Following are generated styles via gulp. */
         /* inject: css */
         .self_asserted_container .row .panel-default {
-            padding: 40px 30px;
+            padding: 0 30px;
             margin: auto;
             height: 100%;
             background-color: #fff
@@ -786,7 +787,6 @@
 
         .self_asserted_container .row .panel-default .panel-body {
             margin: 0 auto;
-            max-width: 380px;
             width: auto;
             padding: 0
         }
@@ -1102,11 +1102,6 @@
             z-index: 4 !important;
         }
 
-        input:focus {
-            border: 2px solid #004071 !important;
-            background-color: #dde4f5 !important;
-        }
-
         a#createAccount {
             padding: 10px 6px;
             color: white !important;
@@ -1185,6 +1180,19 @@
         #extension_customer_number_or_address_trouble_message_label {
             color: #a11a1a;
             font-size: 16px;
+        }
+
+        input:focus {
+            border: 2px solid #004071 !important;
+            background-color: #dde4f5 !important;
+        }
+        .unified_container .row .panel-default #api .localAccount .entry .entry-item input:focus {
+            border: 2px solid #004071;
+            background-color: #dde4f5;
+        }
+        .unified_container .row .panel-default #api .localAccount .entry .entry-item input[text]:focus {
+            border: 2px solid #004071 !important;
+            background-color: #dde4f5 !important;
         }
     </style>
 
