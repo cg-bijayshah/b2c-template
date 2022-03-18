@@ -1320,7 +1320,7 @@
                         <div class="panel-body">
                             <div id="api" role="main">
                             </div>
-                            <div class="pw-helper-panel">
+                            <div id="pw-helper-panel" class="pw-helper-panel">
                                 <ul class="pw-helper-text">
                                     <li class="length">Must be at least 8 characters long.</li>
                                     <li class="lowercase">Must contain a lowercase letter.</li>
@@ -1393,10 +1393,10 @@
 
                 pw.addEventListener("focus", function(){
                     console.log('test');
-                    document.getElementsByClassName('.pw-helper-panel').style.display = 'block';
+                    document.getElementById('pw-helper-panel').style.display = 'block';
                 });
                 pw.addEventListener("focusout", function(){
-                    document.getElementsByClassName('.pw-helper-panel').style.display = 'none';
+                    document.getElementById('pw-helper-panel').style.display = 'none';
                 });
 
                 var pwHelperText = {
