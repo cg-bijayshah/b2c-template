@@ -1262,7 +1262,6 @@
         }
 
         .pw-helper-panel{
-            display: none;
             position: absolute;
             bottom: 42px;
             left: 482px;
@@ -1397,9 +1396,11 @@
                     pwpanel.style.display = 'block';
                     pwpanel.style.height = '200px';
                 });
-                pw.addEventListener("focusout", function(){
-                    document.getElementById('pw-helper-panel').style.display = 'none';
-                });
+                //**
+               // pw.addEventListener("focusout", function(){
+               //     document.getElementById('pw-helper-panel').style.display = 'none';
+               // }); 
+                
 
                 var pwHelperText = {
                     charLength: document.querySelector('.pw-helper-text .length'),
