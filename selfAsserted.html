@@ -1297,7 +1297,10 @@
             
         console.log("working?");
         document.getElementById('email').placeholder = 'you@example.com';
-        
+
+        var input = document.getElementById ("email");
+        input.placeholder = "me@example.com";
+
         var elm = document.getElementById("email_success"),
             old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
             interval = setInterval(function () {
