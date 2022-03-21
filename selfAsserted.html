@@ -1379,7 +1379,8 @@
             if (fieldlist.querySelector("p").innerHTML = "Please provide the following details.") {
                 console.log("testing: final validation step");
                 var attrlist = document.getElementById("attributeList");
-                attrlist.querySelectorAll('li').style.display = "block";
+                var ulmain = attrlist.querySelector('ul');
+                ulmain.querySelectorAll('p').style.display = "block";
             } else {
                 console.log('not the same page;');
             }
