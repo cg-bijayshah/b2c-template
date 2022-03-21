@@ -1286,6 +1286,9 @@
         .panel {
             border-radius: 11px;
         }
+        .visibleNow{
+            display:block !important;
+        }
     </style>
 </head>
 
@@ -1393,8 +1396,14 @@
             if(codeWord){
                 console.log("FOUND CODE WORD");
                 var attrlist = document.getElementById("attributeList");
-                var ulmain = attrlist.getElementsByTagName('ul');
-                ulmain.getElementsByTagName('li').style.display = "block";
+                var ligroup = attrlist.getElementsByTagName('li');
+
+                len = ligroup !== null ? ligroup.length : 0,
+                    i = 0;
+                for(i; i < len; i++) {
+                    ligroup[i].className += " visibleNow"; 
+                }
+
             } else {
                 console.log('code word not present;');
             }
