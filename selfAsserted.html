@@ -1348,6 +1348,8 @@
         var input = document.getElementById ("email");
         if(input){
             input.placeholder = "me@example.com";
+        } else {
+            console.log('no email available;')
         }
         
 
@@ -1378,6 +1380,8 @@
                 console.log("testing: final validation step");
                 var attrlist = document.getElementById("attributeList");
                 attrlist.querySelectorAll('li').style.display = "block";
+            } else {
+                console.log('not the same page;');
             }
         })
 
