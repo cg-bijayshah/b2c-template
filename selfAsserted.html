@@ -1352,8 +1352,8 @@
             console.log('no email available;')
         }
         
-
-        var elm = document.getElementById("email_success"),
+        if(document.getElementById("email_success")){
+            var elm = document.getElementById("email_success"),
             old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
             interval = setInterval(function () {
             var style = elm.currentStyle || window.getComputedStyle(elm, false);
@@ -1372,13 +1372,18 @@
                 });
             }
             }, 120);
+        }
+        
         })();
 
         </script>
         <script>
         (function (){
             var codeWord = document.getElementById("input_code_word_label");
-            if (codeWord.innerHTML.length > 0) {
+            console.log(codeWord.innerHTML.length);
+            document.addEventListener("load", function(){
+                console.log("length continued:", codeWord.innerHTML.length);
+                if (codeWord.innerHTML.length > 0) {
                 console.log("testing: code word greater than 0");
                 var attrlist = document.getElementById("attributeList");
                 var ulmain = attrlist.getElementsByTagName('ul');
@@ -1386,7 +1391,7 @@
             } else {
                 console.log('code word not present;');
             }
-            
+            })
         })
         </script>
         <script>
