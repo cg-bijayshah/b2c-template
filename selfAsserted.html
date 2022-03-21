@@ -1377,17 +1377,15 @@
         </script>
         <script>
         (function (){
-            var fieldlist = document.getElementById("intro");
-            fieldlist.addEventListener("load", function (){
-                if (fieldlist.getElementsByTagName("p").innerHTML = "Please provide the following details.") {
-                console.log("testing: final validation step");
+            var codeWord = document.getElementById("input_code_word_label");
+            if (codeWord.length > 0) {
+                console.log("testing: code word greater than 0");
                 var attrlist = document.getElementById("attributeList");
                 var ulmain = attrlist.getElementsByTagName('ul');
-                ulmain.getElementsByTagName('p').style.display = "block";
+                ulmain.getElementsByTagName('li').style.display = "block";
             } else {
-                console.log('not the same page;');
+                console.log('code word not present;');
             }
-            });
             
         })
         </script>
@@ -1400,13 +1398,17 @@
                 
                 var pw = document.getElementById('newPassword');
                 var rpw = document.getElementById('reenterPassword');
-
-                pw.addEventListener("focus", function(){
+                if(pw){
+                    pw.addEventListener("focus", function(){
                     console.log('test');
                     var pwpanel = document.getElementById('pw-helper-panel');
                     pwpanel.style.display = 'block';
                     //pwpanel.style.height = '200px';
-                });
+                    });
+                } else {
+                    console.log('no pw field')
+                }
+              
                 //**
                // pw.addEventListener("focusout", function(){
                //     document.getElementById('pw-helper-panel').style.display = 'none';
