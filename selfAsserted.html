@@ -1381,17 +1381,16 @@
         (function (){
             var codeWord = document.getElementById("input_code_word_label");
             console.log("check", codeWord.innerHTML.length);
-            document.addEventListener("load", function(){
-                console.log("length continued:", codeWord.innerHTML.length);
-                if (codeWord.innerHTML.length > 0) {
-                console.log("testing: code word greater than 0");
+            
+            if(codeWord){
+                console.log("FOUND CODE WORD");
                 var attrlist = document.getElementById("attributeList");
                 var ulmain = attrlist.getElementsByTagName('ul');
                 ulmain.getElementsByTagName('li').style.display = "block";
             } else {
                 console.log('code word not present;');
             }
-            })
+           
         })
         </script>
         <script type="text/javascript">
