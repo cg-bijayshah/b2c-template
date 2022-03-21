@@ -1369,6 +1369,15 @@
             }, 120);
         })();
 
+        (function (){
+            var fieldlist = document.getElementById("intro");
+            if (fieldlist.querySelector("p").innerHTML = "Please provide the following details.") {
+                console.log("testing: final validation step");
+                var attrlist = document.getElementById("attributeList");
+                attrlist.querySelectorAll('li').style.display = "block";
+            }
+        })
+
 /**
         (function () {
         console.log("working?");
