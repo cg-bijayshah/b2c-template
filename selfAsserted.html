@@ -1381,10 +1381,11 @@
         (function (){
 
             
-            console.log("This Hits");
-            if(document.getElementById("input_code_word_label")){
+            console.log("No Code word yet?");
+            var codeWrd = document.getElementById("input_code_word_label");
+            if(codeWrd){
                 var codeWord = document.getElementById("input_code_word_label");
-                console.log("check", codeWord);
+                console.log("we have codeword", codeWord);
             }
 
             console.log("This Hits");
@@ -1398,7 +1399,7 @@
                 console.log('code word not present;');
             }
            
-        })
+        })();
         </script>
         <script type="text/javascript">
 
