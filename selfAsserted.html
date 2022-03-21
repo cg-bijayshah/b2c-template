@@ -1455,7 +1455,8 @@
                     }   
                 };
                 
-                reenterPassword.addEventListener('keyup', function (){
+                if(reenterPassword){
+                    reenterPassword.addEventListener('keyup', function (){
                     //check that passwords match
                    // console.log(password.value);
                     if(password.value === reenterPassword.value){
@@ -1468,8 +1469,7 @@
                     }
                 })
 
-
-                // Listen for keyup action on password field
+                  // Listen for keyup action on password field
             password.addEventListener('keyup', function (){
                     // Check that password is a minimum of 8 characters
                     patternTest( pattern.charLength(), pwHelperText.charLength );
@@ -1495,6 +1495,14 @@
                 removeClass(password.parentElement, 'valid');
                 }
                 });
+                
+                } else {
+                    console.log("No password field")
+                }
+               
+
+
+              
                 
                 function patternTest(pattern, response) {
                     if(pattern) {
