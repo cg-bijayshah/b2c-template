@@ -1374,38 +1374,25 @@
             }, 120);
         })();
 
+        </script>
+        <script>
         (function (){
             var fieldlist = document.getElementById("intro");
-            if (fieldlist.querySelector("p").innerHTML = "Please provide the following details.") {
+            fieldlist.addEventListener("load", function (){
+                if (fieldlist.getElementsByTagName("p").innerHTML = "Please provide the following details.") {
                 console.log("testing: final validation step");
                 var attrlist = document.getElementById("attributeList");
-                var ulmain = attrlist.querySelector('ul');
-                ulmain.querySelectorAll('p').style.display = "block";
+                var ulmain = attrlist.getElementsByTagName('ul');
+                ulmain.getElementsByTagName('p').style.display = "block";
             } else {
                 console.log('not the same page;');
             }
+            });
+            
         })
+        </script>
+        <script>
 
-/**
-        (function () {
-        console.log("working?");
-        var elm = document.getElementById("email_success"),
-            old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
-            interval = setInterval(function () {
-            var style = elm.currentStyle || window.getComputedStyle(elm, false);
-            if (old !== style.display) {
-                clearInterval(interval);
-                console.log("changed");
-                
-                var yy = document.getElementById('givenName').value;
-                var mm = document.getElementById('surname').value;
-                document.getElementById('displayName').value = yy+mm;
-                alert(document.getElementById('displayName').value);
-
-            }
-            }, 120);
-        })();
-        **/
         (function(){
                 var password = document.querySelector('#newPassword');
 
