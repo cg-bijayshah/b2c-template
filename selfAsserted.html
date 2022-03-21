@@ -1379,8 +1379,12 @@
         </script>
         <script type="text/javascript">
         (function (){
-            var codeWord = document.getElementById("input_code_word_label");
-            console.log("check", codeWord.innerHTML.length);
+            if(document.getElementById("input_code_word_label")){
+                var codeWord = document.getElementById("input_code_word_label");
+                console.log("check", codeWord);
+            }
+            
+            console.log("This Hits");
             
             if(codeWord){
                 console.log("FOUND CODE WORD");
@@ -1495,7 +1499,7 @@
                 removeClass(password.parentElement, 'valid');
                 }
                 });
-                
+
                 } else {
                     console.log("No password field")
                 }
