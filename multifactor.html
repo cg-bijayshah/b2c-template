@@ -1071,37 +1071,42 @@
             height: auto;
             background-color: #ffffffe0;
         }
+
         input:focus {
             border: 2px solid #004071 !important;
             background-color: #dde4f5 !important;
         }
+
         .unified_container .row .panel-default #api .localAccount .entry .entry-item input:focus {
             border: 2px solid #004071;
             background-color: #dde4f5;
         }
+
         .unified_container .row .panel-default #api .localAccount .entry .entry-item input[text]:focus {
             border: 2px solid #004071 !important;
             background-color: #dde4f5 !important;
         }
+
         #attributeVerification #attributeList ul li input:focus {
             border: 2px solid #004071 !important;
-            background-color: #dde4f5 !important;   
+            background-color: #dde4f5 !important;
         }
+
         .panel {
             border-radius: 11px;
         }
     </style>
     <script>
-        (function(){
-          var elm = document.getElementById('email_success')[0],
-            old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
-            interval = setInterval(function(){
-              var style = elm.currentStyle || window.getComputedStyle(elm, false);
-              if(old !== style.display){
-                clearInterval(interval);
-                console.log('changed');
-              }
-            },120);
+        (function () {
+            var elm = document.getElementById('email_success')[0],
+                old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
+                interval = setInterval(function () {
+                    var style = elm.currentStyle || window.getComputedStyle(elm, false);
+                    if (old !== style.display) {
+                        clearInterval(interval);
+                        console.log('changed');
+                    }
+                }, 120);
         })();
     </script>
 </head>
@@ -1119,7 +1124,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="https://qa.brinkshome.com" target="_self">
+                    <a class="navbar-brand" href="https://staging.brinkshome.com" target="_self">
                         <img src="https://theme.zdassets.com/theme_assets/99582/71fddfa564878537181b1eaede2f20ce11d65a33.svg"
                             alt="Brinks Home Brand" />
                     </a>
@@ -1128,7 +1133,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="https://customerportal.qa.brinkshome.com/sign-in" target="_self">Sign In</a></li>
+                        <li><a href="https://customerportal.staging.brinkshome.com/sign-in" target="_self">Sign In</a>
+                        </li>
                         <!-- /    <li><a href="https://dev.mymoni.com/my-account/setup-account" target="_self">Register</a></li>-->
                     </ul>
                 </div><!-- /.navbar-collapse -->
