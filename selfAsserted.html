@@ -1568,17 +1568,20 @@
                 else {
                     new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
                 }
-<<<<<<< HEAD
-                
-            })();
-        </script>
-    
-=======
             }
 
         })();
     </script>
->>>>>>> ea1ace3b27dc3ecb8dd610b3813a31f2de3f983a
+    <script type="text/javascript">
+        jQuery(function($){
+            $("form").keypress(function(e) {
+                //Enter key
+                if (e.which == 13) {
+                return false;
+                }
+            });        
+        });
+    </script>
 </body>
 
 </html>
