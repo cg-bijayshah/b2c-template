@@ -1620,7 +1620,24 @@
             var confirmPass = document.getElementById("reenterPassword");
             var createUser = document.getElementById("continue");
             
-            window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName === 'INPUT' && e.target.type !== 'textarea'){e.preventDefault();return false;}}},true);
+            //window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName === 'INPUT' && e.target.type !== 'textarea'){e.preventDefault();return false;}}},true);
+
+
+            emailField.addEventListener('keypress', function (e) {
+            if (e.keyCode === 13 || e.which === 13) {
+                e.preventDefault();
+                return false;
+            }
+            
+            });
+
+            confirmPass.addEventListener('keypress', function (e) {
+            if (e.keyCode === 13 || e.which === 13) {
+                e.preventDefault();
+                return false;
+            }
+            
+            });
             
 
 
