@@ -1393,6 +1393,11 @@
                             if (displayName){
                                 console.log(displayName, "found display name");
                                 matches.forEach(function (item, index) {
+                                    console.log(item, "ITEM");
+                                    console.log(index, "INDEX");
+                                    console.log(item[1,2,3,4], "test");
+                                    console.log("Ok test");
+                                    console.log(item[1], "another test");
                                 if(item[4]){
                                     console.log(item[4], "ok hid number 4");
                                     return;
