@@ -1623,6 +1623,34 @@
             });
         });
     </script>
+     <script type="text/javascript">
+        (function () {
+            var emailField = document.getElementById("email_ver_input");
+            var sendBtn = document.getElementById("email_ver_but_send");
+
+            var confirmPass = document.getElementById("reenterPassword");
+            var createUser = document.getElementById("continue");
+            
+            emailField.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    console.log("trying to submit with the correct button.")
+                    sendBtn.submit();
+                    return false;
+                }
+            });
+            
+            confirmPass.addEventListener("keyup", function(event) {
+                if (event.keyCode === 13) {
+                    console.log("trying to submit with the correct button.")
+                    createUser.submit();
+                    return false;
+                }
+            });
+            
+
+
+        })
+    </script>
 </body>
 
 </html>
