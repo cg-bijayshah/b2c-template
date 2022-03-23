@@ -1427,6 +1427,10 @@
             var codeWrd = document.getElementById("input_code_word_label");
             if (codeWrd) {
                 var codeWord = document.getElementById("input_code_word_label");
+                var codeWordInput = document.getElementById("input_code_word");
+                
+                codeWordInput.input.placeholder = "******";
+                codeWordInput.setAttribute("type", "password");
                 console.log("we have codeword", codeWord);
             }
 
