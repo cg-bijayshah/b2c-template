@@ -1388,10 +1388,22 @@
                             document.getElementById("continue").style.display = "block";
                             document.getElementById("email_label").style.display = 'none';
                             document.getElementById("email").style.backgroundColor = '#e5f0f5'
-
-                            matches.forEach(function (item) {
-                                item.style.display = "block";
+                            
+                            var displayName = document.getElementById("displayName");
+                            if (displayName){
+                                matches.forEach(function (item) {
+                                if(item[4]){
+                                    console.log(item[4], "ok hid number 4");
+                                    return;
+                                } else {
+                                    item.style.display = "block";
+                                }
                             });
+                            } else {
+                                console.log("Display name not found")
+                                return;
+                            }
+
                         }
                     }, 120);
             }
@@ -1401,8 +1413,6 @@
     </script>
     <script type="text/javascript">
         (function () {
-
-
             console.log("No Code word yet?");
             var codeWrd = document.getElementById("input_code_word_label");
             if (codeWrd) {
