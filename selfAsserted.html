@@ -1392,7 +1392,7 @@
                             var displayName = document.getElementById("displayName");
                             if (displayName){
                                 console.log(displayName, "found display name");
-                                matches.forEach(function (item) {
+                                matches.forEach(function (item, index) {
                                 if(item[4]){
                                     console.log(item[4], "ok hid number 4");
                                     return;
