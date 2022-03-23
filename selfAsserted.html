@@ -1614,45 +1614,13 @@
     </script>
      <script type="text/javascript">
         (function () {
-            var emailField = document.getElementById("email_ver_input").focus();
+            var emailField = document.getElementById("email_ver_input");
             var sendBtn = document.getElementById("email_ver_but_send");
 
-            var confirmPass = document.getElementById("reenterPassword").focus();
+            var confirmPass = document.getElementById("reenterPassword");
             var createUser = document.getElementById("continue");
             
-            console.log(emailField);
-            console.log(confirmPass);
-
-            window.addEventListener('keydown',function(e){
-                if(e.keyIdentifier=='U+000A'||
-                   e.keyIdentifier=='Enter'||
-                   e.keyCode==13 && !emailField || !confirmPass){
-                    if(e.target.nodeName === 'INPUT' && 
-                       e.target.type !== 'textarea'){
-                           e.preventDefault();
-                           return false;
-                        }
-                    } if (e.keyIdentifier=='U+000A'||
-                   e.keyIdentifier=='Enter'||
-                   e.keyCode==13 &&
-                   emailField) {
-                        if(e.target.nodeName === 'INPUT' && 
-                           e.target.type !== 'textarea'){
-                           sendBtn.submit();
-                        }
-                    } else if (e.keyIdentifier=='U+000A'||
-                   e.keyIdentifier=='Enter'||
-                   e.keyCode==13 &&
-                   confirmPass.focus()) {
-                        if(e.target.nodeName === 'INPUT' && 
-                           e.target.type !== 'textarea'){
-                            createUser.submit();
-                        }
-                    }
-            },true);
-
-            
-
+            window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName === 'INPUT' && e.target.type !== 'textarea'){e.preventDefault();return false;}}},true);
 
         })();
     </script>
