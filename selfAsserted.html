@@ -1573,9 +1573,10 @@
         })();
     </script>
     <script type="text/javascript">
+        //this disables the button although ENTER is still firing the errors... 
         $( document ).ready(function() {
             console.log( "ready!" );
-            $("#continue").attr("disabled", true);
+           // $("#continue").attr("disabled", true);
         });
         
        $("form").bind("keypress", function (e) {
