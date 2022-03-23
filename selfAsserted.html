@@ -1620,26 +1620,7 @@
             var confirmPass = document.getElementById("reenterPassword");
             var createUser = document.getElementById("continue");
             
-            //window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName === 'INPUT' && e.target.type !== 'textarea'){e.preventDefault();return false;}}},true);
-
-
-            emailField.addEventListener("keyup", function(event) {
-                console.log(event, "OK EVENT")
-                if (event.keyCode === 13) {
-                    console.log("trying to send Email Verify.")
-                    sendBtn.submit();
-                    return false;
-                }
-            });
-
-            confirmPass.addEventListener("keyup", function(event) {
-                console.log(event, "OK EVENT")
-                if (event.keyCode === 13) {
-                    console.log("trying to Create Account.")
-                    createUser.submit();
-                    return false;
-                }
-            });
+            window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName === 'INPUT' && e.target.type !== 'textarea'){e.preventDefault();return false;}}},true);
             
 
 
