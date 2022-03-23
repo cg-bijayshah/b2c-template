@@ -1391,12 +1391,14 @@
                             
                             var displayName = document.getElementById("displayName");
                             if (displayName){
+                                console.log(displayName, "found display name");
                                 matches.forEach(function (item) {
                                 if(item[4]){
                                     console.log(item[4], "ok hid number 4");
                                     return;
                                 } else {
                                     item.style.display = "block";
+                                    console.log("Email Valid - Bring back our fields.")
                                 }
                             });
                             } else {
