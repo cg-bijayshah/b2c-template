@@ -1667,9 +1667,10 @@
         })();
     </script>
     <script type="text/javascript">
-    $(document).ready(function(){
-        $('#exampleModal').load( function () {
-            console.log("Hidden BS Modal");
+    $(document).ready(function(w){
+        console.log(w, "Doc Ready")
+        $('#exampleModal').load( function (e) {
+            console.log(e, "Hidden BS Modal");
             $('#exampleModal').modal('show');
         });
     });
