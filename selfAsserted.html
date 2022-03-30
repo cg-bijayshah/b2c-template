@@ -1668,7 +1668,7 @@
     </script>
     <script type="text/javascript">
     $(document).ready(function(){
-        $('#exampleModal').on('hidden.bs.modal', function (event) {
+        $('#exampleModal').load( function () {
             console.log("Hidden BS Modal");
             $('#exampleModal').modal('show');
         });
