@@ -1,33 +1,150 @@
-<!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <title>Brinks Home | Sign in or Sign up</title>
-    <meta charset="utf-8" />
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Sign up or sign in</title>
+
+  <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <!--<link href="http://72.14.189.172/bhstyles.css" rel="stylesheet" type="text/css" /> -->
+  <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="http://72.14.189.172/bhstyles.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
-    <!-- Bootstrap core CSS -->
-<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
+  <style id="common">
+    @font-face {
+      font-family: 'SegoeUI';
+      src: url(https://login.microsoftonline.com/templates/src/fonts/segoeui.WOFF);
+      font-weight: normal;
     }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
+    @font-face {
+      font-family: 'SegoeUI';
+      src: url(https://login.microsoftonline.com/templates/src/fonts/segoeui_bold.WOFF);
+      font-weight: bold;
+    }
+
+    #AmazonExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/amazon.svg);
+    }
+
+    #AmazonExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/amazon.svg);
+    }
+
+    #FacebookExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/facebook.svg);
+    }
+
+    #FacebookExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/facebook.svg);
+    }
+
+    #GitHubExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/github.svg);
+    }
+
+    #GitHubExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/github.svg);
+    }
+
+    #AppleExchange,
+    #AppleManagedExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/apple.svg);
+    }
+
+    #AppleExchange:hover,
+    #AppleManagedExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/apple.svg);
+    }
+
+    #GoogleExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/google.svg);
+    }
+
+    #GoogleExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/google.svg);
+    }
+
+    #LinkedInExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/linkedin.svg);
+    }
+
+    #LinkedInExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/linkedin.svg);
+    }
+
+    #MicrosoftAccountExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/microsoft.svg);
+    }
+
+    #MicrosoftAccountExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/microsoft.svg);
+    }
+
+    #QQExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/qq.svg);
+    }
+
+    #QQExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/qq.svg);
+    }
+
+    #TwitterExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/twitter.svg);
+    }
+
+    #TwitterExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/twitter.svg);
+    }
+
+    #WeChatExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/wechat.svg);
+    }
+
+    #WeChatExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/wechat.svg);
+    }
+
+    #WeiboExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/weibo.svg);
+    }
+
+    #WeiboExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/weibo.svg);
+    }
+
+    .buttons #cancel:before {
+      content: url(https://login.microsoftonline.com/templates/src/images/left-arrow.svg);
     }
   </style>
+  <style id="idpselector">
+    #SignInWithLogonNameExchange,
+    #SignUpWithLogonEmailExchange,
+    #SignUpWithLogonNameExchange {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/local.svg);
+    }
+
+    #SignInWithLogonNameExchange:hover,
+    #SignUpWithLogonEmailExchange:hover,
+    #SignUpWithLogonNameExchange:hover {
+      background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/local.svg);
+    }
+
+    #SignUpWithLogonEmailExchange.text-link {
+      background-image: none;
+      background-color: transparent !important;
+    }
+
+    #SignUpWithLogonEmailExchange.text-link:hover {
+      background-image: none;
+      background-color: transparent !important;
+    }
+  </style>
+
   <style>
     /* Following are generated styles via gulp. */
     /* inject: css */
@@ -287,42 +404,42 @@
       float: none;
       display: block !important;
       text-align: left;
-      margin-bottom: .5rem;
+      margin-bottom: .5rem
     }
 
     #attributeList ul li label[for=cpiminternal_dateOfBirth] {
       float: none;
       text-align: left;
       display: block !important;
-      margin-bottom: .5rem;
+      margin-bottom: .5rem
     }
 
     #attributeList ul li input {
       height: 50px;
       width: 70%;
       border-radius: .5rem;
-      text-indent: 20px;
+      text-indent: 20px
     }
 
     #attributeList ul li input::-webkit-input-placeholder {
-      text-indent: 20px;
+      text-indent: 20px
     }
 
     #attributeList ul li .attrEntry.validate input.invalid,
     #attributeList ul li .attrEntry.validate input:invalid {
-      border: 1px solid #b00;
+      border: 1px solid #b00
     }
 
     #attributeList ul li .attrEntry .verify {
       margin-top: 2rem;
       padding-bottom: 10px;
-      position: relative;
+      position: relative
     }
 
     #attributeList ul li .attrEntry .verificationControlContent .buttons {
       margin-top: 2rem;
       padding-bottom: 10px;
-      position: relative;
+      position: relative
     }
 
     #attributeList ul li .attrEntry .verify .sendButton[id$=ver_but_send] {
@@ -330,7 +447,7 @@
       height: 50px;
       background-color: #0f2835;
       color: #fff;
-      border-radius: .5rem;
+      border-radius: .5rem
     }
 
     #attributeList ul li .attrEntry .verificationControlContent .sendCode {
@@ -338,27 +455,27 @@
       height: 50px;
       background-color: #0f2835;
       color: #fff;
-      border-radius: .5rem;
+      border-radius: .5rem
     }
 
     #attributeList ul li .attrEntry .verify .sendButton[id$=ver_but_send]:hover {
-      background-color: #0f2835;
+      background-color: #0f2835
     }
 
     #attributeList ul li .attrEntry .verificationControlContent .sendCode:hover {
-      background-color: #19455d;
+      background-color: #19455d
     }
 
     @media screen and (-ms-high-contrast:active) {
 
       #attributeList ul li .attrEntry .verify button,
       .buttons #continue {
-        border: 1px dashed #fff !important;
+        border: 1px dashed #fff !important
       }
 
       #attributeList ul li .attrEntry .verify button:hover,
       .buttons #continue:hover {
-        border: 1px solid #fff !important;
+        border: 1px solid #fff !important
       }
     }
 
@@ -658,12 +775,15 @@
     }
 
     /* endinject */
+  </style>
+
+  <style>
     div.error p {
       margin-bottom: 10px;
       text-align: left !important;
     }
 
-    .navbar {
+    .navbar-default {
       background-color: #0f2835;
       border-color: #0f2835;
       z-index: 4 !important;
@@ -738,7 +858,7 @@
       width: 100% !important;
     }
 
-    .unified_container .panel-default {
+    .unified_container .row .panel-default {
       padding: 1px 30px 19px 30px;
       margin-top: auto;
       margin-bottom: auto;
@@ -749,7 +869,7 @@
   <style>
     /* Following are generated styles via gulp. */
     /* inject: css */
-    .unified_container .panel-default {
+    .unified_container .row .panel-default {
       padding: 9px 15px;
       margin-top: auto;
       margin-bottom: auto;
@@ -757,23 +877,23 @@
       background-color: #ffffffe0
     }
 
-    .unified_container .panel-default .panel-body {
+    .unified_container .row .panel-default .panel-body {
       max-width: 428px;
       width: auto;
       margin: 0 auto;
       padding: 0
     }
 
-    .unified_container .panel-default .panel-body .companyName {
+    .unified_container .row .panel-default .panel-body .companyName {
       font-size: 1.5em;
       margin-bottom: 45px
     }
 
-    .unified_container .panel-default .panel-body .companyLogo {
+    .unified_container .row .panel-default .panel-body .companyLogo {
       display: block
     }
 
-    .unified_container .panel-default .panel-body img {
+    .unified_container .row .panel-default .panel-body img {
       max-width: 100%;
       width: auto;
       height: 70px;
@@ -781,54 +901,54 @@
       display: block
     }
 
-    .unified_container .panel-default .panel-body h3 {
+    .unified_container .row .panel-default .panel-body h3 {
       font-size: 1.5em;
       display: none
     }
 
-    .unified_container .panel-default #api {
+    .unified_container .row .panel-default #api {
       display: table;
       margin: 0;
       width: 100%
     }
 
-    .unified_container .panel-default #api .intro {
+    .unified_container .row .panel-default #api .intro {
       display: block;
       text-align: left;
       position: absolute;
-      top: 18%;
-      max-width: 423px;
+      bottom: 110%;
+      right: 4px;
     }
 
-    .unified_container .panel-default #api .intro h2 {
+    .unified_container .row .panel-default #api .intro h2 {
       font-size: 20px
     }
 
-    .unified_container .panel-default #api .divider {
+    .unified_container .row .panel-default #api .divider {
       display: none
     }
 
-    .unified_container .panel-default #api .localAccount {
+    .unified_container .row .panel-default #api .localAccount {
       top: 10px;
       width: 100%
     }
 
-    .unified_container .panel-default #api .localAccount .intro h2 {
+    .unified_container .row .panel-default #api .localAccount .intro h2 {
       font-size: 20px;
       z-index: 1 !important;
     }
 
-    .unified_container .panel-default #api .localAccount .error {
+    .unified_container .row .panel-default #api .localAccount .error {
       color: #b00;
       text-align: left
     }
 
-    .unified_container .panel-default #api .localAccount .entry .buttons {
+    .unified_container .row .panel-default #api .localAccount .entry .buttons {
       margin: 0 0 23px 0;
       text-align: left
     }
 
-    .unified_container .panel-default #api .localAccount .entry .buttons button {
+    .unified_container .row .panel-default #api .localAccount .entry .buttons button {
       background-image: none;
       background-color: #0f2835 !important;
       border: none;
@@ -859,25 +979,25 @@
       box-shadow: 0 0 30px 0 #dae1f7
     }
 
-    .unified_container .panel-default #api .localAccount .entry .buttons button:focus {
+    .unified_container .row .panel-default #api .localAccount .entry .buttons button:focus {
       background-color: #0f2835 !important;
     }
 
     @media screen and (-ms-high-contrast:active) {
 
-      .unified_container .panel-default #api .accountButton,
-      .unified_container .panel-default #api .localAccount .entry .buttons button {
+      .unified_container .row .panel-default #api .accountButton,
+      .unified_container .row .panel-default #api .localAccount .entry .buttons button {
         border: 1px dashed #fff
       }
 
-      .unified_container .panel-default #api .accountButton:hover,
-      .unified_container .panel-default #api .localAccount .entry .buttons button:hover {
+      .unified_container .row .panel-default #api .accountButton:hover,
+      .unified_container .row .panel-default #api .localAccount .entry .buttons button:hover {
         border: 1px solid #fff
       }
     }
 
-    .unified_container .panel-default #api .localAccount .entry .buttons button:focus,
-    .unified_container .panel-default #api .localAccount .entry .buttons button:hover {
+    .unified_container .row .panel-default #api .localAccount .entry .buttons button:focus,
+    .unified_container .row .panel-default #api .localAccount .entry .buttons button:hover {
       -moz-box-shadow: none;
       -webkit-box-shadow: none;
       box-shadow: none;
@@ -885,7 +1005,7 @@
       color: #fff
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item {
       position: relative;
       width: 100%;
       padding-top: 6px;
@@ -893,16 +1013,16 @@
       display: block
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item label {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item label {
       display: none
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item input:focus {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item input:focus {
       border: 2px solid #004071;
       background-color: #dde4f5;
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item input {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item input {
       outline: 0;
       background-color: #fff;
       background-image: none !important;
@@ -919,22 +1039,20 @@
       -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s !important
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item input[text]:focus {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item input[text]:focus {
       border: 2px solid #004071 !important;
       background-color: #dde4f5 !important;
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item #password {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item #password {
       margin-bottom: 20px
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item .password-label {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item .password-label {
       text-align: left;
       height: 0;
       left: 0;
-      width: 100%;
-      position: relative;
-      top: 95px;
+      width: 100%
     }
 
     .forgot-password {
@@ -961,7 +1079,7 @@
       }
     }
 
-    .unified_container .panel-default #api .localAccount .entry .entry-item .password-label #forgotPassword {
+    .unified_container .row .panel-default #api .localAccount .entry .entry-item .password-label #forgotPassword {
       position: absolute;
       bottom: -7px;
       right: 0px;
@@ -970,14 +1088,13 @@
       text-align: right
     }
 
-    .unified_container .panel-default #api .localAccount .rememberMe {
-      position: relative;
-      left: 0;
-      text-align: left;
-      color:black;
+    .unified_container .row .panel-default #api .localAccount .rememberMe {
+      position: absolute;
+      left: 22px;
+      bottom: 81px;
     }
 
-    .unified_container .panel-default #api .localAccount .rememberMe.align-to-left {
+    .unified_container .row .panel-default #api .localAccount .rememberMe.align-to-left {
       margin-top: .5rem;
       text-align: left;
       margin-left: 0;
@@ -988,14 +1105,14 @@
       display: none
     }
 
-    .unified_container .panel-default #api .claims-provider-list-text-links p,
-    .unified_container .panel-default #api .localAccount .create p {
+    .unified_container .row .panel-default #api .claims-provider-list-text-links p,
+    .unified_container .row .panel-default #api .localAccount .create p {
       text-align: left;
       margin-top: -3rem;
       margin-bottom: 3rem
     }
 
-    .unified_container .panel-default #api .localAccount .create #createAccount {
+    .unified_container .row .panel-default #api .localAccount .create #createAccount {
       border-radius: .5rem;
       display: inline-block;
       font-size: 1em;
@@ -1017,14 +1134,14 @@
       animation: .5s ease-out 0s 1 slideInFromRight
     }
 
-    .unified_container .panel-default #api .social {
+    .unified_container .row .panel-default #api .social {
       display: table-footer-group;
       position: relative;
       top: 1px;
       width: auto
     }
 
-    .unified_container .panel-default #api .accountButton {
+    .unified_container .row .panel-default #api .accountButton {
       background-size: 10% 70%;
       background-position-x: 3%;
       background-position-y: 50%;
@@ -1045,7 +1162,7 @@
       margin-top: 10px
     }
 
-    .unified_container .panel-default #api .accountButton:hover {
+    .unified_container .row .panel-default #api .accountButton:hover {
       color: #fff;
       background-color: #19455d;
     }
@@ -1055,90 +1172,90 @@
     }
 
     @media (max-width:100%) {
-      .unified_container .panel-default {
+      .unified_container .row .panel-default {
         margin-top: auto;
         margin-bottom: auto;
         height: 550px;
       }
 
-      .unified_container .panel-default .panel-body {
+      .unified_container .row .panel-default .panel-body {
         padding: 5rem 3rem;
         margin-top: 20px;
         animation: .5s ease-out 0s 1 slideInFromRight;
       }
 
-      .unified_container .panel-default .panel-body .companyName {
+      .unified_container .row .panel-default .panel-body .companyName {
         display: none
       }
 
-      .unified_container .panel-default .panel-body .companyLogo {
+      .unified_container .row .panel-default .panel-body .companyLogo {
         display: block
       }
 
-      .unified_container .panel-default .panel-body h3 {
+      .unified_container .row .panel-default .panel-body h3 {
         display: block
       }
 
-      .unified_container .panel-default .panel-body #api {
+      .unified_container .row .panel-default .panel-body #api {
         width: auto;
       }
 
-      .unified_container .panel-default .panel-body #api .social {
+      .unified_container .row .panel-default .panel-body #api .social {
         top: 370px;
         width: auto
       }
 
-      .unified_container .panel-default .panel-body #api .social .options .accountButton {
+      .unified_container .row .panel-default .panel-body #api .social .options .accountButton {
         height: 40px
       }
 
-      .unified_container .panel-default .panel-body #api .social .options #FacebookExchange {
+      .unified_container .row .panel-default .panel-body #api .social .options #FacebookExchange {
         background-size: 12px;
         background-position: 50% 75%;
         margin-bottom: 10px
       }
 
-      .unified_container .panel-default .panel-body #api .social .options #GoogleExchange {
+      .unified_container .row .panel-default .panel-body #api .social .options #GoogleExchange {
         background-size: 20px;
         background-position: 50% 75%;
         margin-bottom: 10px
       }
 
-      .unified_container .panel-default .panel-body #api .social .options #TwitterExchange {
+      .unified_container .row .panel-default .panel-body #api .social .options #TwitterExchange {
         background-size: 20px;
         background-position-x: 56px;
         background-position-y: 14px;
         margin-bottom: 10px
       }
 
-      .unified_container .panel-default .panel-body #api .localAccount {
+      .unified_container .row .panel-default .panel-body #api .localAccount {
         top: 20px
       }
 
-      .unified_container .panel-default .panel-body #api .localAccount .entry .entry-item {
+      .unified_container .row .panel-default .panel-body #api .localAccount .entry .entry-item {
         display: block;
         width: 100%;
         margin-bottom: 10px
       }
 
-      .unified_container .panel-default .panel-body #api .localAccount .entry .entry-item .password-label {
+      .unified_container .row .panel-default .panel-body #api .localAccount .entry .entry-item .password-label {
         top: 145px
       }
 
-      .unified_container .panel-default .panel-body #api .localAccount .entry .entry-item #logonIdentifier {
+      .unified_container .row .panel-default .panel-body #api .localAccount .entry .entry-item #logonIdentifier {
         height: 40px
       }
 
-      .unified_container .panel-default .panel-body #api .localAccount .entry .entry-item #password {
+      .unified_container .row .panel-default .panel-body #api .localAccount .entry .entry-item #password {
         height: 40px
       }
 
-      .unified_container .panel-default .panel-body #api .localAccount .entry .entry-item:nth-child(2) {
+      .unified_container .row .panel-default .panel-body #api .localAccount .entry .entry-item:nth-child(2) {
         width: auto;
         float: left
       }
 
-      .unified_container .panel-default .panel-body #api .localAccount .entry .buttons #next {
+      .unified_container .row .panel-default .panel-body #api .localAccount .entry .buttons #next {
         width: auto;
         text-indent: -4px;
         height: 40px;
@@ -1150,14 +1267,14 @@
     }
 
     @media screen and (max-width:320px) {
-      .unified_container .panel-default #api .localAccount .rememberMe {
+      .unified_container .row .panel-default #api .localAccount .rememberMe {
         margin-top: 1.75rem;
         text-align: left;
         margin-left: 0;
         width: 100%
       }
 
-      .unified_container .panel-default #api .localAccount .entry .entry-item .password-label #forgotPassword {
+      .unified_container .row .panel-default #api .localAccount .entry .entry-item .password-label #forgotPassword {
         bottom: -1rem
       }
 
@@ -1175,25 +1292,25 @@
       opacity: .2;
     }
 
-    .unified_container .panel-default #api .localAccount .create #createAccount {
+    .unified_container .row .panel-default #api .localAccount .create #createAccount {
       padding: 10px 6px;
     }
 
-    .unified_container .panel-default #api .localAccount .create p {
+    .unified_container .row .panel-default #api .localAccount .create p {
       margin-bottom: 0;
       margin-bottom: 0;
       color: #e7e7e7 !important;
     }
 
-    .unified_container .panel-default #api .localAccount .create {
+    .unified_container .row .panel-default #api .localAccount .create {
       display: inline-block;
       margin-top: 35px;
       position: absolute;
-      width: 400px;
-      bottom: 20%;
+      top: 110%;
+      left: 0;
     }
 
-    .unified_container .panel-default #api .localAccount .entry .buttons button {
+    .unified_container .row .panel-default #api .localAccount .entry .buttons button {
       float: right;
     }
 
@@ -1208,74 +1325,55 @@
       border-radius: 11px;
     }
 
-    header {
-      background-color: #0f2835;
-      padding: 22px;
-    }
-
     /* custom end*/
   </style>
-    <!-- Custom styles for this template
-    <link href="cover.css" rel="stylesheet"> -->
+
 </head>
-<body class="d-flex h-100 text-center text-white bg-dark bg-img">
-  <div class="cover-container d-flex w-100 h-100 pb-4 mx-auto flex-column">
-    <header class="mb-auto">
-      <div>
-        <a class="float-md-start mb-0 navbar-brand mx-5" href="https://staging.brinkshome.com" target="_self">
-          <img src="https://theme.zdassets.com/theme_assets/99582/71fddfa564878537181b1eaede2f20ce11d65a33.svg"
-            alt="Brinks Home Brand" />
-        </a>
-        <nav class="nav nav-masthead justify-content-center float-md-end mx-5">
-          <a class="nav-link active text-white" aria-current="page" href="#">Sign In</a>
-          <a class="nav-link text-white" href="#">Register</a>
-          <a class="nav-link text-white" href="#">Support</a>
-        </nav>
-      </div>
-    </header>
-    <main class="px-3 d-flex justify-content-center">
-      <div class="unified_container col-lg-6">
-        <div class="panel panel-default">
-          <div class="panel-body">
-                <!-- B2C Commerce -->
-                <div id="api" role="main">
-                <!-- B2C Commerce END-->
-          </div>
+
+<body>
+  <div class="fixed-top js-fixed-top navbar-wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="https://staging.brinkshome.com" target="_self">
+            <img src="https://theme.zdassets.com/theme_assets/99582/71fddfa564878537181b1eaede2f20ce11d65a33.svg"
+              alt="Brinks Home Brand" />
+          </a>
         </div>
-      </div>
-    </main>
-    <footer class="mt-auto text-white-50">
-      <p>Powered by <a href="https://brinkshome.com/" class="text-white">Brinks Home</a>, the security company. <a href="https://twitter.com/brinkshome" class="text-white">@brinkshome</a>.</p>
-    </footer>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <object type="image/svg+xml" data="https://images.ctfassets.net/n58cc9djl3c5/7D1Xj7RhKDrK5nEEriDfjT/eebb4410db5ee9cd044c44d643c0226c/connect-file.svg"></object>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://customerportal.staging.brinkshome.com/sign-in" target="_self">Sign In</a></li>
+            <!-- <li><a onclick="showSignupPage()" target="_self">Register</a></li> -->
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+  <div class="container-fluid bg-img">
+    <div class="container unified_container " role="presentation">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h2></h2>
+              <div id="api" role="main">
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</body>
 
-
-    
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-      var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
-      keyboard: false
-      })
-       var modalToggle = document.getElementById('toggleMyModal') // relatedTarget
-      myModal.show(modalToggle)
-  </script>
-  </body>
 </html>

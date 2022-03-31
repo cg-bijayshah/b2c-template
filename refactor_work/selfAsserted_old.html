@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>User details</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="http://72.14.189.172/bhstyles.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+    <style id="common">
+        @font-face {
+            font-family: 'SegoeUI';
+            src: url(https://login.microsoftonline.com/templates/src/fonts/segoeui.WOFF);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: 'SegoeUI';
+            src: url(https://login.microsoftonline.com/templates/src/fonts/segoeui_bold.WOFF);
+            font-weight: bold;
+        }
+
+        #AmazonExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/amazon.svg);
+        }
+
+        #AmazonExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/amazon.svg);
+        }
+
+        #FacebookExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/facebook.svg);
+        }
+
+        #FacebookExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/facebook.svg);
+        }
+
+        #GitHubExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/github.svg);
+        }
+
+        #GitHubExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/github.svg);
+        }
+
+        #AppleExchange,
+        #AppleManagedExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/apple.svg);
+        }
+
+        #AppleExchange:hover,
+        #AppleManagedExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/apple.svg);
+        }
+
+        #GoogleExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/google.svg);
+        }
+
+        #GoogleExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/google.svg);
+        }
+
+        #LinkedInExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/linkedin.svg);
+        }
+
+        #LinkedInExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/linkedin.svg);
+        }
+
+        #MicrosoftAccountExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/microsoft.svg);
+        }
+
+        #MicrosoftAccountExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/microsoft.svg);
+        }
+
+        #QQExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/qq.svg);
+        }
+
+        #QQExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/qq.svg);
+        }
+
+        #TwitterExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/twitter.svg);
+        }
+
+        #TwitterExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/twitter.svg);
+        }
+
+        #WeChatExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/wechat.svg);
+        }
+
+        #WeChatExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/wechat.svg);
+        }
+
+        #WeiboExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/weibo.svg);
+        }
+
+        #WeiboExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/weibo.svg);
+        }
+
+        .buttons #cancel:before {
+            content: url(https://login.microsoftonline.com/templates/src/images/left-arrow.svg);
+        }
+    </style>
+    <style id="idpselector">
+        #SignInWithLogonNameExchange,
+        #SignUpWithLogonEmailExchange,
+        #SignUpWithLogonNameExchange {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/colored/local.svg);
+        }
+
+        #SignInWithLogonNameExchange:hover,
+        #SignUpWithLogonEmailExchange:hover,
+        #SignUpWithLogonNameExchange:hover {
+            background-image: url(https://login.microsoftonline.com/templates/src/idp_logos/white/local.svg);
+        }
+
+        #SignUpWithLogonEmailExchange.text-link {
+            background-image: none;
+            background-color: transparent !important;
+        }
+
+        #SignUpWithLogonEmailExchange.text-link:hover {
+            background-image: none;
+            background-color: transparent !important;
+        }
+    </style>
+
+    <style>
+        /* Following are generated styles via gulp. */
+        /* inject: css */
+        html {
+            background: 0 0
+        }
+
+        body {
+            font-family: Segoe UI, SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-attachment: fixed;
+            background-color: #fff;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: left;
+            font: -apple-system-body
+        }
+
+        p {
+            margin: 0
+        }
+
+        a:focus {
+            outline: 0
+        }
+
+        input,
+        select {
+            border: 1px solid #605e5c
+        }
+
+        input::placeholder {
+            color: #6a6a6a;
+            opacity: 1
+        }
+
+        img[data-tenant-branding-background=true] {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            position: fixed;
+            left: 0;
+            overflow: hidden;
+            opacity: .2;
+            top: 0
+        }
+
+        div[data-tenant-branding-background-color=true] {
+            background-color: #1e5b71;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            z-index: 0
+        }
+
+        .container {
+            text-align: center;
+            width: 100%;
+            display: table;
+            height: 100vh;
+            padding: 0
+        }
+
+        #api {
+            margin: 0 auto
+        }
+
+        .heading h1 {
+            margin-bottom: 20px
+        }
+
+        .col-lg-6 {
+            max-width: 470px;
+            width: 100%;
+            float: none;
+            display: inline-block;
+            vertical-align: top;
+            padding: 0
+        }
+
+        .row {
+            width: 100%;
+            margin: 0;
+            display: table-cell;
+            vertical-align: middle
+        }
+
+        ul {
+            padding: 0
+        }
+
+        #simplemodal-container .simplemodal-data {
+            padding: 5px 8px;
+            overflow: hidden;
+            background-color: #fff;
+            border-radius: 3px;
+            font-style: italic
+        }
+
+        #LocalAccountSigninEmailExchange,
+        #LocalAccountSigninUsernameExchange,
+        #SignInWithLogonEmailExchange,
+        #SignInWithLogonNameExchange,
+        #SignUpWithLogonEmailExchange,
+        #SignUpWithLogonNameExchange {
+            background-color: #0f2835;
+            background-image: url(none);
+            background-size: 10%;
+            background-position-x: 95%;
+            background-position-y: 50%;
+            background-repeat: no-repeat;
+            border-radius: .5rem;
+            width: 100%;
+            width: 100%;
+            font-size: 1em;
+            margin-left: auto
+        }
+
+        #LocalAccountSigninEmailExchange:hover,
+        #LocalAccountSigninUsernameExchange:hover,
+        #SignInWithLogonEmailExchange:hover,
+        #SignInWithLogonNameExchange:hover,
+        #SignUpWithLogonEmailExchange:hover,
+        #SignUpWithLogonNameExchange:hover {
+            background-color: #1662c7 !important
+        }
+
+        #AmazonExchange:hover {
+            background-color: #36474f !important
+        }
+
+        #FacebookExchange:hover {
+            background-color: #3b5595 !important
+        }
+
+        #GitHubExchange:hover {
+            background-color: #0f0f0f !important
+        }
+
+        #AppleExchange:hover,
+        #AppleManagedExchange:hover {
+            background-color: #0f0f0f !important
+        }
+
+        #GoogleExchange:hover {
+            background-color: #c64a29 !important
+        }
+
+        #LinkedInExchange:hover {
+            background-color: #0274b3 !important
+        }
+
+        #MicrosoftAccountExchange:hover {
+            background-color: #01a4ef !important
+        }
+
+        #QQExchange:hover {
+            background-color: #1a97df !important
+        }
+
+        #TwitterExchange:hover {
+            background-color: #1da1f2 !important
+        }
+
+        #WeChatExchange:hover {
+            background-color: #4cc522 !important
+        }
+
+        #WeiboExchange:hover {
+            background-color: #e81123 !important
+        }
+
+        .buttons button {
+            margin: 0 auto;
+            width: 60%;
+            height: 50px;
+            background-color: #0f2835;
+            border-radius: .5rem;
+            border: none;
+            color: #fff;
+            font-size: 1em;
+            margin-top: 10px
+        }
+
+        .buttons button:hover {
+            background-color: #1662c7;
+            border-color: #204d74
+        }
+
+        .buttons button[aria-disabled=true] {
+            opacity: .3
+        }
+
+        .buttons button:not([aria-disabled=true]) {
+            opacity: 1
+        }
+
+        .buttons #cancel {
+            padding: 0;
+            margin-left: auto;
+            background: 0 0;
+            border: 0;
+            width: inherit;
+            position: absolute;
+            background-color: transparent;
+            top: 2px;
+            left: 15px;
+            font-size: 1em;
+            color: #505050;
+            box-shadow: none;
+            text-align: left
+        }
+
+        .buttons #cancel:hover {
+            color: #000 !important
+        }
+
+        .buttons #cancel:before {
+            padding: 10px;
+            vertical-align: sub;
+            zoom: 90%;
+            display: inline-block
+        }
+
+        #attributeList ul {
+            padding: 0
+        }
+
+        #attributeList ul li {
+            list-style: none;
+            margin: 1rem 0
+        }
+
+        label {
+            font-weight: 600
+        }
+
+        #attributeList ul li label {
+            display: block;
+            text-align: left;
+            float: none
+        }
+
+        /*#attributeList ul li.EmailBox label,
+        #attributeList ul li.Password label,
+        #attributeList ul li.TextBox label {
+            display: none !important
+        }*/
+
+        #attributeList ul li label[for=country] {
+            float: left;
+            display: inline-block !important;
+            margin-bottom: .5rem
+        }
+
+        #attributeList ul li label[for=cpiminternal_legalCountry] {
+            float: none;
+            display: block !important;
+            text-align: left;
+            margin-bottom: .5rem
+        }
+
+        #attributeList ul li label[for=cpiminternal_dateOfBirth] {
+            float: none;
+            text-align: left;
+            display: block !important;
+            margin-bottom: .5rem
+        }
+
+        #attributeList ul li input {
+            height: 50px;
+            width: 70%;
+            border-radius: .5rem;
+            text-indent: 20px
+        }
+
+        #attributeList ul li input::-webkit-input-placeholder {
+            text-indent: 20px
+        }
+
+        #attributeList ul li .attrEntry.validate input.invalid,
+        #attributeList ul li .attrEntry.validate input:invalid {
+            border: 1px solid #b00;
+            background-color: #BF4C4C;
+        }
+
+        #attributeList ul li .attrEntry .verify {
+            padding-bottom: 10px;
+            position: relative
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .buttons {
+            margin-top: 2rem;
+            padding-bottom: 10px;
+            position: relative
+        }
+
+        #attributeList ul li .attrEntry .verify .sendButton[id$=ver_but_send] {
+            width: 60%;
+            height: 50px;
+            background-color: #0f2835;
+            color: #fff;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .sendCode {
+            width: 60%;
+            height: 50px;
+            background-color: #0f2835;
+            color: #fff;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verify .sendButton[id$=ver_but_send]:hover {
+            background-color: #1662c7
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .sendCode:hover {
+            background-color: #1662c7
+        }
+
+        @media screen and (-ms-high-contrast:active) {
+
+            #attributeList ul li .attrEntry .verify button,
+            .buttons #continue {
+                border: 1px dashed #fff !important
+            }
+
+            #attributeList ul li .attrEntry .verify button:hover,
+            .buttons #continue:hover {
+                border: 1px solid #fff !important
+            }
+        }
+
+        #attributeList ul li .attrEntry .verify .verifyButton {
+            width: inherit;
+            padding: 0 20px;
+            height: 50px;
+            background-color: #0f2835;
+            color: #fff;
+            margin-right: 5px;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .verifyCode {
+            width: inherit;
+            padding: 0 20px;
+            height: 50px;
+            background-color: #0f2835;
+            color: #fff;
+            margin-right: 5px;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verify .verifyButton:hover {
+            background-color: #1662c7
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .verifyCode:hover {
+            background-color: #1662c7
+        }
+
+        #attributeList ul li .attrEntry .verify .sendButton[id$=ver_but_resend] {
+            width: inherit;
+            padding: 0 20px;
+            border: 0;
+            font-size: 1em;
+            height: 50px;
+            right: 0;
+            bottom: -38px;
+            background-color: #0f2835;
+            color: #fff;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .sendNewCode {
+            width: inherit;
+            padding: 0 20px;
+            border: 0;
+            font-size: 1em;
+            height: 50px;
+            right: 0;
+            bottom: -38px;
+            background-color: #0f2835;
+            color: #fff;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verify .sendButton[id$=ver_but_resend]:hover {
+            background-color: #1662c7
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .sendNewCode:hover {
+            background-color: #1662c7
+        }
+
+        #attributeList ul li .attrEntry .verify .editButton {
+            border: none;
+            color: #fff;
+            background-color: #0f2835;
+            width: 60%;
+            height: 50px;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .changeClaims {
+            border: none;
+            color: #fff;
+            background-color: #0f2835;
+            width: 60%;
+            height: 50px;
+            border-radius: .5rem
+        }
+
+        #attributeList ul li .attrEntry .verify .editButton:hover {
+            background-color: #1662c7
+        }
+
+        #attributeList ul li .attrEntry .verificationControlContent .changeClaims:hover {
+            background-color: #1662c7
+        }
+
+        #attributeList ul li .attrEntry .verify #email_ver_input_label {
+            display: none !important
+        }
+
+        #api .working {
+            background: url(data:image/gif;base64,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) no-repeat;
+            height: 30px;
+            width: auto;
+            background-position: center bottom
+        }
+
+        #attributeList ul li .attrEntry .itemLevel {
+            display: none
+        }
+
+        input[type=email],
+        input[type=password],
+        input[type=text] {
+            -webkit-appearance: none
+        }
+
+        #attributeList ul li .attrEntry .dropdown_single {
+            height: 45px;
+            border-radius: .5rem;
+            width: 100%;
+            padding-left: 15px
+        }
+
+        #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth.date {
+            display: table;
+            width: 100%
+        }
+
+        #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth.date select {
+            border-radius: .5rem;
+            display: inline-block;
+            height: 50px;
+            padding-left: 15px
+        }
+
+        #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth select#cpiminternal_dateOfBirth_day.day {
+            margin-right: 3%;
+            width: 23%
+        }
+
+        #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth select#cpiminternal_dateOfBirth_month.month {
+            margin-right: 3%;
+            width: 38%
+        }
+
+        #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth select#cpiminternal_dateOfBirth_year.year {
+            width: 33%
+        }
+
+        #attributeList ul li .helpLink {
+            display: none
+        }
+
+        @media screen and (max-width:100%) {
+            .row .panel-default .panel-body {
+                margin-top: 40px
+            }
+
+            .row .panel-default .panel-body .branding img {
+                display: block;
+                height: 80px;
+                width: auto;
+                margin: 0 auto
+            }
+
+            .row .panel-default .panel-body .branding h1 {
+                display: none
+            }
+
+            .row .panel-default .panel-body h3 {
+                font-size: 1.5em;
+                margin-top: 15px
+            }
+
+            #attributeVerification #attributeList ul li input {
+                width: 60%;
+                height: 40px;
+                border-radius: .5rem;
+                border: 1px solid #605e5c;
+                text-indent: 10px
+            }
+
+            #attributeVerification #attributeList ul li input::-webkit-input-placeholder {
+                text-indent: 10px
+            }
+
+            #attributeVerification #attributeList ul li #email {
+                width: 65%;
+                float: left;
+                position: relative;
+                z-index: 2
+            }
+
+            #attributeVerification #attributeList ul li #email_ver_but_verify {
+                background: 0 0;
+                border: 0;
+                color: #496ad8;
+                font-size: 1em;
+                position: relative;
+                right: 0;
+                top: 60px;
+                font-size: 1.1em;
+                width: auto;
+                z-index: 1;
+                height: 20px
+            }
+
+            #attributeVerification #attributeList ul li #email_ver_input {
+                min-width: 50%;
+                width: 60%;
+                float: left
+            }
+
+            #attributeVerification #attributeList ul li #email_ver_but_resend {
+                top: 10px;
+                font-size: 1.1em;
+                height: 20px
+            }
+
+            #attributeVerification #attributeList ul li .attrEntry #email {
+                height: 40px
+            }
+
+            #attributeVerification #attributeList ul li .attrEntry .verify #email_ver_but_send:after {
+                content: " Verify";
+                font-size: 1.1em;
+                font-style: bold;
+                margin-left: 40%
+            }
+
+            #attributeVerification #attributeList ul li .attrEntry .verify #email_ver_but_send {
+                height: 40px;
+                width: auto;
+                float: right;
+                overflow: hidden;
+                text-indent: -200px
+            }
+
+            #attributeVerification #attributeList ul li .attrEntry .verify #email_ver_but_edit {
+                margin-bottom: 15px;
+                border: none;
+                color: #fff;
+                background-color: #496ad8;
+                border-radius: .5rem;
+                font-size: 1em;
+                box-shadow: 0 0 40px 2px #dae1f7;
+                width: 30%;
+                height: 40px;
+                overflow: hidden;
+                padding-top: 6px;
+                margin-left: 40%
+            }
+
+            #attributeVerification #attributeList ul li .attrEntry .verify:after {
+                content: " ";
+                display: block;
+                clear: both
+            }
+
+            #attributeVerification #attributeList #verifying_blurb {
+                margin-top: 15px
+            }
+
+            #attributeVerification .buttons #continue {
+                height: 40px
+            }
+
+            #attributeVerification .buttons #cancel {
+                font-size: 1em;
+                left: 40%
+            }
+        }
+
+        .panel,
+        .panel_layout,
+        .panel_layout_row,
+        body,
+        html {
+            height: 100%
+        }
+
+        @media only screen and (max-width:600px) {
+            img[data-tenant-branding-background=true] {
+                display: none
+            }
+
+            .container {
+                background-color: #fff
+            }
+
+            .container .row .panel-default {
+                background-color: #ffffffe0;
+                border-radius: 0;
+                border: none;
+                box-shadow: none
+            }
+        }
+
+        /* endinject */
+    </style>
+
+
+    <style>
+        /* Following are generated styles via gulp. */
+        /* inject: css */
+        .self_asserted_container .row .panel-default {
+            padding: 20px 30px;
+            margin: auto;
+            height: 100%;
+            background-color: #ffffffe0;
+        }
+
+        .self_asserted_container .row .panel-default .panel-body {
+            margin: 0 auto;
+            width: auto;
+            padding: 0
+        }
+
+        .self_asserted_container .row .panel-default .panel-body img.companyLogo {
+            display: block;
+            margin: auto;
+            height: 70px
+        }
+
+        .self_asserted_container .row .panel-default .panel-body .branding h1 {
+            font-size: 1.5em;
+            color: #505050
+        }
+
+        .self_asserted_container .row .panel-default .panel-body h3 {
+            font-size: 1.5em;
+            color: #505050;
+            margin-top: 5px;
+            margin-bottom: 30px
+        }
+
+        .self_asserted_container .row .panel-default .panel-body .intro {
+            text-align: left;
+            margin-top: 2rem
+        }
+
+        .self_asserted_container .row .panel-default .panel-body #api #attributeVerification .pageLevel {
+            color: #b00;
+            text-align: left
+        }
+
+        .self_asserted_container .row .panel-default .panel-body #api #attributeVerification .error {
+            color: #b00;
+            text-align: left;
+            margin-bottom: 5px
+        }
+
+        .errorText {
+            border: none;
+            padding: 0;
+            background: 0 0;
+            color: #a61e0c
+        }
+
+        .self_asserted_container .row .panel-default .panel-body #api .verifying-modal {
+            display: none;
+            margin-top: 10px
+        }
+
+        #attributeVerification #attributeList ul {
+            display: flex;
+            flex-direction: column
+        }
+
+        #attributeVerification #attributeList ul li input {
+            width: 100%
+        }
+
+        #attributeVerification #attributeList ul li input:invalid {
+            outline: unset
+        }
+
+        #attributeVerification #attributeList ul li .helpText {
+            display: none;
+            color: #a61e0c;
+            text-align: justify
+        }
+
+        #attributeVerification #attributeList ul li #email_success.verificationSuccessText {
+            float: left
+        }
+
+        #attributeVerification #attributeList ul li #email_info {
+            float: left
+        }
+
+        #attributeVerification #attributeList ul li .attrEntry.validate #email_fail_retry {
+            float: left
+        }
+
+        #attributeVerification #attributeList ul li .attrEntry.validate #email_fail_server {
+            float: left;
+            text-align: left
+        }
+
+        #attributeVerification #attributeList ul li #email_fail_no_retry {
+            float: left
+        }
+
+        div#email_intro {
+            display: none !important;
+            width: 100%;
+            float: left;
+            text-align: left
+        }
+
+        div#email_info {
+            text-align: left
+        }
+
+        #attributeVerification #attributeList ul li input[type=checkbox],
+        #attributeVerification #attributeList ul li input[type=radio] {
+            width: 24px !important;
+            box-shadow: none;
+            height: 24px;
+            display: inline-block;
+            float: left;
+            clear: left;
+            margin: .5rem
+        }
+
+        #attributeVerification #attributeList ul li input[type=checkbox].invalid {
+            border: none
+        }
+
+        #attributeList ul li input[type=checkbox]+label {
+            float: left;
+            display: inline-block !important;
+            margin: .8rem 0 0 .8rem;
+            font-weight: 400
+        }
+
+        #attributeList ul li input[type=checkbox] {
+            border: none;
+            position: relative;
+            width: 24px;
+            height: 24px;
+            font-size: 20px;
+            margin: 0;
+            display: inline-block;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: 0;
+            text-indent: 0
+        }
+
+        #attributeVerification #attributeList ul li input[type=checkbox]:focus {
+            box-shadow: 0 0 0 2px #000;
+            background-color: #dde4f5;
+            border-color: #004071;
+            border-radius: .2rem
+        }
+
+        #attributeList ul li input[type=checkbox]:after {
+            content: '';
+            position: absolute;
+            display: block;
+            z-index: 1;
+            width: 24px;
+            height: 24px;
+            border: 1px solid #605e5c;
+            border-radius: 2px
+        }
+
+        #attributeList ul li input[type=checkbox]:before {
+            background: #00f;
+            background-size: 10px 8px;
+            background-repeat: no-repeat;
+            background-position: 3px 4px;
+            position: absolute;
+            left: 2px;
+            z-index: 2;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            color: #f6ac4f
+        }
+
+        #attributeList ul li input[type=checkbox]:checked:after {
+            content: '\2713';
+            position: absolute;
+            box-sizing: border-box;
+            padding-left: 4px;
+            line-height: 23px;
+            color: #fff;
+            background-color: #0f2835;
+            top: 0;
+            opacity: 1;
+            left: 0;
+            border: 1px solid #0f2835;
+            border-radius: 2px
+        }
+
+        #attributeList ul li input[type=radio]+label {
+            float: left;
+            display: inline-block !important;
+            margin: .5rem;
+            font-weight: 400
+        }
+
+        #attributeList ul li input[type=radio] {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #dedede;
+            border-radius: 50%;
+            background-color: #fff;
+            outline: 0
+        }
+
+        #attributeVerification #attributeList ul li input[type=radio]:focus {
+            background-color: #0f2835;
+            border: 1px solid #0f2835;
+        }
+
+        #attributeList ul li input[type=radio]:checked {
+            background-color: #0f2835;
+            border: 1px solid #0f2835;
+        }
+
+        .attrEntry .verificationInfoText {
+            margin-bottom: 5px
+        }
+
+        #attributeList ul li .attrEntry select:hover {
+            border-color: #888
+        }
+
+        #attributeList ul li .attrEntry select option {
+            font-weight: 400
+        }
+
+        .disclaimer-container {
+            text-align: left;
+            font-size: 10px
+        }
+
+        .disclaimer-container .disclaimer-link {
+            display: block;
+            width: fit-content
+        }
+
+        .disclaimer-container-page-level {
+            margin-top: 10px
+        }
+
+        #attributeList ul li .buttons.verify label {
+            float: left
+        }
+
+        .qrCodeControlContent img {
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .qrCodeInfo {
+            text-align: left
+        }
+
+        /* endinject */
+
+        /* custom begin */
+        img[data-tenant-branding-background=true] {
+            opacity: .2;
+        }
+
+        #background_branding_container div.row {
+            background-color: #0f2835;
+            width: 100%;
+            position: absolute;
+            height: 120px;
+        }
+
+        /* custom end*/
+    </style>
+    <style>
+        .navbar {
+            border-radius: 0 !important;
+            margin-bottom: 0 !important;
+            padding: 19px !important;
+            z-index: 4 !important;
+        }
+
+        .unified_container .row .panel-default #api .intro {
+            display: block;
+            text-align: left;
+            position: absolute;
+            bottom: 110%;
+            right: 4px;
+        }
+
+        .unified_container .row .panel-default #api .localAccount .intro p {
+            z-index: 1 !important;
+        }
+
+        .unified_container .row .panel-default #api .localAccount .error {
+            color: #b00;
+            text-align: left;
+        }
+
+        .unified_container .row .panel-default #api .localAccount .intro p {
+            font-size: 20px;
+            z-index: 1 !important;
+        }
+
+        div.error p {
+            margin-bottom: 10px;
+            text-align: left !important;
+        }
+
+        .navbar-default {
+            background-color: #0f2835;
+            border-color: #0f2835;
+            z-index: 4 !important;
+        }
+
+        a#createAccount {
+            padding: 10px 6px;
+            color: white !important;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        button:active:focus {
+            background-color: #19455d !important;
+        }
+
+        a {
+            color: #0f2835 !important;
+        }
+
+        .navbar-default .navbar-nav>li>a {
+            color: #f9f9f9 !important;
+        }
+
+        .bg-img {
+            background: url('http://images.ctfassets.net/n58cc9djl3c5/LqAbrJ1P90pLyLH9M3NDU/f927f463004e7627ad81d76b5110c69c/bg-img-optimized.jpg') no-repeat center center fixed !important;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .container {
+                background-color: transparent !important;
+            }
+        }
+
+        .navbar {
+            margin-bottom: 0 !important;
+            padding: 19px !important;
+            z-index: 4 !important;
+        }
+
+        .navbar-default .navbar-nav>li>a {
+            color: #FFF;
+        }
+
+        .intro {
+            position: absolute !important;
+            bottom: 110% !important;
+            right: 65px;
+        }
+
+        .intro p {
+            animation: .7s ease-out 0s 1 slideInFromRight;
+            font-family: 'Sen', sans-serif !important;
+            font-size: 44px !important;
+            font-weight: 100 !important;
+            text-align: center;
+            color: #e7e7e7 !important;
+        }
+
+        p {
+            font-family: 'Sen', sans-serif !important;
+            font-size: 15px !important;
+            font-weight: 400 !important;
+            text-align: center !important;
+        }
+
+        #api button {
+            width: 100% !important;
+            background-color: #0f2835;
+        }
+
+        .unified_container .row .panel-default {
+            padding: 1px 30px 19px 30px;
+            margin-top: auto;
+            margin-bottom: auto;
+            height: auto;
+            background-color: #fff;
+        }
+
+        #extension_customer_number_or_address_trouble_message_label {
+            color: #a11a1a;
+            font-size: 16px;
+        }
+
+        input:focus {
+            border: 2px solid #004071 !important;
+            background-color: #dde4f5 !important;
+        }
+
+        input[type=text]:focus {
+            border: 2px solid #004071 !important;
+            background-color: #dde4f5 !important;
+        }
+
+        .unified_container .row .panel-default #api .localAccount .entry .entry-item input:focus {
+            border: 2px solid #004071;
+            background-color: #dde4f5;
+        }
+
+        .unified_container .row .panel-default #api .localAccount .entry .entry-item input[text]:focus {
+            border: 2px solid #004071 !important;
+            background-color: #dde4f5 !important;
+        }
+
+        #attributeVerification #attributeList ul li input:focus {
+            border: 2px solid #004071 !important;
+            background-color: #dde4f5 !important;
+        }
+
+        button#email_ver_but_resend,
+        button#email_ver_but_edit {
+            background-color: #fff !important;
+            border: 4px solid #0f2835 !important;
+            color: #0f2835 !important;
+            font-weight: bold;
+        }
+    </style>
+
+    <style>
+        div#attributeList ul li:nth-child(1) {
+            display: block;
+        }
+
+        div#attributeList ul li.TextBox:nth-child(2) {
+            display: none;
+        }
+
+        div#attributeList ul li.TextBox:nth-child(3) {
+            display: none;
+        }
+
+        div#attributeList ul li.TextBox:nth-child(4) {
+            display: none;
+        }
+
+        div#attributeList ul li.Password:nth-child(5) {
+            display: none;
+        }
+
+        div#attributeList ul li.Password:nth-child(6) {
+            display: none;
+        }
+
+        button#continue[aria-label=Create] {
+            display: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    <style>
+        ul.pw-helper-text {
+            font-size: 13px;
+            line-height: 30px;
+            color: #bcbcbc;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+            border-radius: 7px;
+            list-style: none;
+        }
+
+        ul.pw-helper-text li span {
+            padding-left:54px;
+            width: 100%;
+            display: block;
+        }
+
+        ul.pw-helper-text li.valid span {
+            padding: 0 5px 0px 54px;
+            width: 100%;
+            display: block;
+        }
+
+
+
+        ul.pw-helper-text li.valid {
+            color: #004071;
+            background: #e5f0f5 url("https://images.ctfassets.net/n58cc9djl3c5/6XQI2B7uFVHEWmSLLmm2v6/4a7dbd66f3e70e93e943523f23b701e1/_icon_check_blue.png") no-repeat 6% 17px;
+            background-size: 20px;
+            padding-left: 0;
+            border-radius: 8px;
+        }
+
+        ul.pw-helper-text li {
+            border-bottom: 1px solid #00000012;
+            padding: 12px 0;
+        }
+
+        form.valid input {
+            border: 2px solid #0f2835;
+        }
+
+        .icon {
+            background: #e5f0f5 url("https://images.ctfassets.net/n58cc9djl3c5/6XQI2B7uFVHEWmSLLmm2v6/4a7dbd66f3e70e93e943523f23b701e1/_icon_check_blue.png") no-repeat 97% 11px;
+            background-size: 25px;
+        }
+
+        #pw-helper-panel {
+            display: none;
+        }
+
+        .pw-helper-panel {
+            position: absolute;
+            bottom: 87px;
+            left: 482px;
+            width: 291px;
+            text-align: left;
+            background: #ffffff;
+            border-radius: 6px !important;
+        }
+
+        @media only screen and (max-width:600px) {
+            .pw-helper-panel {
+                position: unset;
+                width: 100%;
+                padding-bottom: 4px;
+            }
+        }
+
+        .panel {
+            border-radius: 11px;
+        }
+
+        .visibleNow {
+            display: block !important;
+        }
+
+        .verifyInput{
+            margin-top:7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fixed-top js-fixed-top navbar-wrapper">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="https://staging.brinkshome.com" target="_self">
+                        <img src="https://theme.zdassets.com/theme_assets/99582/71fddfa564878537181b1eaede2f20ce11d65a33.svg"
+                            alt="Brinks Home Brand" />
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="https://customerportal.staging.brinkshome.com/sign-in" target="_self">Sign In</a>
+                        </li>
+                        <!-- <li><a href="https://dev.mymoni.com/my-account/setup-account" target="_self">Register</a></li>-->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="container-fluid bg-img">
+        <div class="container  self_asserted_container " role="presentation">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div id="api" role="main">
+                            </div>
+                            <div id="pw-helper-panel" class="pw-helper-panel">
+                                <ul class="pw-helper-text">
+                                    <li class="length"><span>Must be at least 9 characters long.</span></li>
+                                    <li class="lowercase"><span>Must contain a lowercase letter.</span></li>
+                                    <li class="uppercase"><span>Must contain an uppercase letter.</span></li>
+                                    <li class="special"><span>Must contain a number or special character.</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Test Modal Open
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Want full control over your Brinks Home services? </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <object type="image/svg+xml" data="https://images.ctfassets.net/n58cc9djl3c5/7D1Xj7RhKDrK5nEEriDfjT/eebb4410db5ee9cd044c44d643c0226c/connect-file.svg"></object>
+            </div>
+            <div class="modal-footer">
+                <p>
+                    Create a Customer Portal Account to easily manage your account settings, billing settings, and so much more.
+                </p>
+            <button type="button" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        (function () {
+            var verificationTxt = document.getElementsByClassName("verificationInfoText");
+            var intro = document.getElementsByClassName('intro');
+            var text = intro.getElementsByTagName('p');
+
+            if(verificationTxt.style.display == 'inline'){
+                text === 'Enter your code'
+            }
+
+        })();
+    </script>
+    <script type="text/javascript">
+        (function () {
+
+            console.log("working?");
+
+            var input = document.getElementById("email");
+            if (input) {
+                input.placeholder = "me@example.com";
+            } else {
+                console.log('no email available;')
+            }
+
+            if (document.getElementById("email_success")) {
+                var elm = document.getElementById("email_success"),
+                    old = (elm.currentStyle || window.getComputedStyle(elm, false)).display,
+                    interval = setInterval(function () {
+                        var style = elm.currentStyle || window.getComputedStyle(elm, false);
+                        if (old !== style.display) {
+                            clearInterval(interval);
+                            console.log("changed");
+                            const container = document.querySelector("#attributeList");
+                            const matches = container.querySelectorAll("li");
+
+                            document.getElementById("continue").style.display = "block";
+                            document.getElementById("email_label").style.display = 'none';
+                            document.getElementById("email").style.backgroundColor = '#e5f0f5'
+                            
+                            var displayName = document.getElementById("displayName");
+                            if (displayName){
+                               // console.log("found displayName");
+                                matches.forEach(function (item, index) {
+                                if(index === 3){
+                                    //console.log("ok lets keep DisplayName hidden");
+                                    return;
+                                } else {
+                                    item.style.display = "block";
+                                  //  console.log("Email Valid - Bring back our fields.")
+                                }
+                            });
+                            } else {
+                               // console.log("Display name not found")
+                                return;
+                            }
+
+                        }
+                    }, 120);
+            }
+
+        })();
+
+    </script>
+    <script type="text/javascript">
+        (function () {
+            console.log("No Code word yet?");
+            var codeWrd = document.getElementById("input_code_word_label");
+            if (codeWrd) {
+                var codeWord = document.getElementById("input_code_word_label");
+                console.log("we have codeword", codeWord);
+            }
+
+            console.log("This Hits");
+
+            if (codeWord) {
+                console.log("FOUND CODE WORD");
+                var attrlist = document.getElementById("attributeList");
+                var ligroup = attrlist.getElementsByTagName('li');
+                var codeWordInput = document.getElementById("input_code_word");
+                
+                codeWordInput.placeholder = "******";
+                codeWordInput.setAttribute("type", "password");
+
+                len = ligroup !== null ? ligroup.length : 0,
+                    i = 0;
+                for (i; i < len; i++) {
+                    ligroup[i].className += " visibleNow";
+                }
+
+            } else {
+                console.log('code word not present;');
+            }
+
+        })();
+    </script>
+    <script type="text/javascript">
+
+        (function () {
+            var password = document.querySelector('#newPassword');
+
+            var reenterPassword = document.querySelector('#reenterPassword');
+
+            var pw = document.getElementById('newPassword');
+            var rpw = document.getElementById('reenterPassword');
+            if (pw) {
+                pw.addEventListener("focus", function () {
+                  //  console.log('test');
+                    var pwpanel = document.getElementById('pw-helper-panel');
+                    pwpanel.style.display = 'block';
+                    //pwpanel.style.height = '200px';
+                });
+            } else {
+                console.log('no pw field')
+            }
+
+            //**
+            // pw.addEventListener("focusout", function(){
+            //     document.getElementById('pw-helper-panel').style.display = 'none';
+            // }); 
+
+
+            var pwHelperText = {
+                charLength: document.querySelector('.pw-helper-text .length'),
+                lowercase: document.querySelector('.pw-helper-text .lowercase'),
+                uppercase: document.querySelector('.pw-helper-text .uppercase'),
+                special: document.querySelector('.pw-helper-text .special')
+            };
+
+            var pattern = {
+                charLength: function () {
+                    if (password.value.length >= 9) {
+                        return true;
+                    }
+                },
+                lowercase: function () {
+                    var regex = /^(?=.*[a-z]).+$/; // Lowercase character pattern
+
+                    if (regex.test(password.value)) {
+                        return true;
+                    }
+                },
+                uppercase: function () {
+                    var regex = /^(?=.*[A-Z]).+$/; // Uppercase character pattern
+
+                    if (regex.test(password.value)) {
+                        return true;
+                    }
+                },
+                special: function () {
+                    var regex = /^(?=.*[0-9_\W]).+$/; // Special character or number pattern
+
+                    if (regex.test(password.value)) {
+                        return true;
+                    }
+                }
+            };
+
+            if (reenterPassword) {
+                reenterPassword.addEventListener('keyup', function () {
+                    //check that passwords match
+                    // console.log(password.value);
+                    if (password.value === reenterPassword.value) {
+                        //  alert('passwords match')
+                        password.classList.add('icon');
+                        reenterPassword.classList.add('icon');
+                    } else if (password.value != reenterPassword.value) {
+                        password.classList.remove('icon');
+                        reenterPassword.classList.remove('icon');
+                    }
+                })
+
+                // Listen for keyup action on password field
+                password.addEventListener('keyup', function () {
+                    // Check that password is a minimum of 8 characters
+                    patternTest(pattern.charLength(), pwHelperText.charLength);
+
+                    // Check that password contains a lowercase letter      
+                    patternTest(pattern.lowercase(), pwHelperText.lowercase);
+
+                    // Check that password contains an uppercase letter
+                    patternTest(pattern.uppercase(), pwHelperText.uppercase);
+
+                    // Check that password contains a number or special character
+                    patternTest(pattern.special(), pwHelperText.special);
+
+                    // Check that all requirements are fulfilled
+                    if (hasClass(pwHelperText.charLength, 'valid') &&
+                        hasClass(pwHelperText.lowercase, 'valid') &&
+                        hasClass(pwHelperText.uppercase, 'valid') &&
+                        hasClass(pwHelperText.special, 'valid')
+                    ) {
+                        addClass(password.parentElement, 'valid');
+                    }
+                    else {
+                        removeClass(password.parentElement, 'valid');
+                    }
+                });
+
+            } else {
+                console.log("No password field")
+            }
+
+
+
+
+
+            function patternTest(pattern, response) {
+                if (pattern) {
+                    addClass(response, 'valid');
+                }
+                else {
+                    removeClass(response, 'valid');
+                }
+            }
+
+            function addClass(el, className) {
+                if (el.classList) {
+                    el.classList.add(className);
+                }
+                else {
+                    el.className += ' ' + className;
+                }
+            }
+
+            function removeClass(el, className) {
+                if (el.classList)
+                    el.classList.remove(className);
+                else
+                    el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+            }
+
+            function hasClass(el, className) {
+                if (el.classList) {
+                    return el.classList.contains(className);
+                }
+                else {
+                    new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+                }
+            }
+
+        })();
+    </script>
+     <script type="text/javascript">
+        (function () {
+            var emailField = document.getElementById("email_ver_input");
+            var sendBtn = document.getElementById("email_ver_but_send");
+
+            var confirmPass = document.getElementById("reenterPassword");
+            var createUser = document.getElementById("continue");
+            
+            window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName === 'INPUT' && e.target.type !== 'textarea'){e.preventDefault();return false;}}},true);
+
+        })();
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
